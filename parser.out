@@ -1,0 +1,1201 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    CORDER
+    CORIZQ
+
+Grammar
+
+Rule 0     S' -> instrucciones
+Rule 1     instrucciones -> instruccion instrucciones
+Rule 2     instrucciones -> instruccion
+Rule 3     instruccion -> INT ID IGUAL expresion2 PTCOMA
+Rule 4     instruccion -> INT ID IGUAL ENTERO PTCOMA
+Rule 5     instruccion -> STRING ID IGUAL CADENA PTCOMA
+Rule 6     instruccion -> STRING ID IGUAL CADENA MAS CADENA PTCOMA
+Rule 7     instruccion -> DOUBLE ID IGUAL DECIMAL PTCOMA
+Rule 8     instruccion -> DOUBLE ID IGUAL expresion PTCOMA
+Rule 9     instruccion -> FLOAT ID IGUAL DECIMAL PTCOMA
+Rule 10    instruccion -> FLOAT ID IGUAL expresion PTCOMA
+Rule 11    instruccion -> BOOLEAN ID IGUAL expresion3 PTCOMA
+Rule 12    instruccion -> INT ID PTCOMA
+Rule 13    instruccion -> STRING ID PTCOMA
+Rule 14    instruccion -> DOUBLE ID PTCOMA
+Rule 15    instruccion -> FLOAT ID PTCOMA
+Rule 16    instruccion -> BOOLEAN ID PTCOMA
+Rule 17    expresion -> expresion MAS expresion
+Rule 18    expresion -> expresion MENOS expresion
+Rule 19    expresion -> expresion POR expresion
+Rule 20    expresion -> expresion DIVIDIDO expresion
+Rule 21    expresion2 -> ENTERO MAS ENTERO
+Rule 22    expresion2 -> ENTERO MENOS ENTERO
+Rule 23    expresion2 -> ENTERO POR ENTERO
+Rule 24    expresion2 -> ENTERO DIVIDIDO ENTERO
+Rule 25    expresion3 -> expresion MAYQUE expresion
+Rule 26    expresion3 -> expresion MENQUE expresion
+Rule 27    expresion3 -> expresion IGUALQUE expresion
+Rule 28    expresion3 -> expresion NIGUALQUE expresion
+Rule 29    expresion3 -> TRUE
+Rule 30    expresion3 -> FALSE
+Rule 31    expresion -> MENOS expresion
+Rule 32    expresion -> PARIZQ expresion PARDER
+Rule 33    expresion2 -> PARIZQ expresion2 PARDER
+Rule 34    expresion -> ENTERO
+Rule 35    expresion -> DECIMAL
+
+Terminals, with rules where they appear
+
+BOOLEAN              : 11 16
+CADENA               : 5 6 6
+CORDER               : 
+CORIZQ               : 
+DECIMAL              : 7 9 35
+DIVIDIDO             : 20 24
+DOUBLE               : 7 8 14
+ENTERO               : 4 21 21 22 22 23 23 24 24 34
+FALSE                : 30
+FLOAT                : 9 10 15
+ID                   : 3 4 5 6 7 8 9 10 11 12 13 14 15 16
+IGUAL                : 3 4 5 6 7 8 9 10 11
+IGUALQUE             : 27
+INT                  : 3 4 12
+MAS                  : 6 17 21
+MAYQUE               : 25
+MENOS                : 18 22 31
+MENQUE               : 26
+NIGUALQUE            : 28
+PARDER               : 32 33
+PARIZQ               : 32 33
+POR                  : 19 23
+PTCOMA               : 3 4 5 6 7 8 9 10 11 12 13 14 15 16
+STRING               : 5 6 13
+TRUE                 : 29
+error                : 
+
+Nonterminals, with rules where they appear
+
+expresion            : 8 10 17 17 18 18 19 19 20 20 25 25 26 26 27 27 28 28 31 32
+expresion2           : 3 33
+expresion3           : 11
+instruccion          : 1 2
+instrucciones        : 1 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . instrucciones
+    (1) instrucciones -> . instruccion instrucciones
+    (2) instrucciones -> . instruccion
+    (3) instruccion -> . INT ID IGUAL expresion2 PTCOMA
+    (4) instruccion -> . INT ID IGUAL ENTERO PTCOMA
+    (5) instruccion -> . STRING ID IGUAL CADENA PTCOMA
+    (6) instruccion -> . STRING ID IGUAL CADENA MAS CADENA PTCOMA
+    (7) instruccion -> . DOUBLE ID IGUAL DECIMAL PTCOMA
+    (8) instruccion -> . DOUBLE ID IGUAL expresion PTCOMA
+    (9) instruccion -> . FLOAT ID IGUAL DECIMAL PTCOMA
+    (10) instruccion -> . FLOAT ID IGUAL expresion PTCOMA
+    (11) instruccion -> . BOOLEAN ID IGUAL expresion3 PTCOMA
+    (12) instruccion -> . INT ID PTCOMA
+    (13) instruccion -> . STRING ID PTCOMA
+    (14) instruccion -> . DOUBLE ID PTCOMA
+    (15) instruccion -> . FLOAT ID PTCOMA
+    (16) instruccion -> . BOOLEAN ID PTCOMA
+
+    INT             shift and go to state 3
+    STRING          shift and go to state 4
+    DOUBLE          shift and go to state 5
+    FLOAT           shift and go to state 6
+    BOOLEAN         shift and go to state 7
+
+    instrucciones                  shift and go to state 1
+    instruccion                    shift and go to state 2
+
+state 1
+
+    (0) S' -> instrucciones .
+
+
+
+state 2
+
+    (1) instrucciones -> instruccion . instrucciones
+    (2) instrucciones -> instruccion .
+    (1) instrucciones -> . instruccion instrucciones
+    (2) instrucciones -> . instruccion
+    (3) instruccion -> . INT ID IGUAL expresion2 PTCOMA
+    (4) instruccion -> . INT ID IGUAL ENTERO PTCOMA
+    (5) instruccion -> . STRING ID IGUAL CADENA PTCOMA
+    (6) instruccion -> . STRING ID IGUAL CADENA MAS CADENA PTCOMA
+    (7) instruccion -> . DOUBLE ID IGUAL DECIMAL PTCOMA
+    (8) instruccion -> . DOUBLE ID IGUAL expresion PTCOMA
+    (9) instruccion -> . FLOAT ID IGUAL DECIMAL PTCOMA
+    (10) instruccion -> . FLOAT ID IGUAL expresion PTCOMA
+    (11) instruccion -> . BOOLEAN ID IGUAL expresion3 PTCOMA
+    (12) instruccion -> . INT ID PTCOMA
+    (13) instruccion -> . STRING ID PTCOMA
+    (14) instruccion -> . DOUBLE ID PTCOMA
+    (15) instruccion -> . FLOAT ID PTCOMA
+    (16) instruccion -> . BOOLEAN ID PTCOMA
+
+    $end            reduce using rule 2 (instrucciones -> instruccion .)
+    INT             shift and go to state 3
+    STRING          shift and go to state 4
+    DOUBLE          shift and go to state 5
+    FLOAT           shift and go to state 6
+    BOOLEAN         shift and go to state 7
+
+    instruccion                    shift and go to state 2
+    instrucciones                  shift and go to state 8
+
+state 3
+
+    (3) instruccion -> INT . ID IGUAL expresion2 PTCOMA
+    (4) instruccion -> INT . ID IGUAL ENTERO PTCOMA
+    (12) instruccion -> INT . ID PTCOMA
+
+    ID              shift and go to state 9
+
+
+state 4
+
+    (5) instruccion -> STRING . ID IGUAL CADENA PTCOMA
+    (6) instruccion -> STRING . ID IGUAL CADENA MAS CADENA PTCOMA
+    (13) instruccion -> STRING . ID PTCOMA
+
+    ID              shift and go to state 10
+
+
+state 5
+
+    (7) instruccion -> DOUBLE . ID IGUAL DECIMAL PTCOMA
+    (8) instruccion -> DOUBLE . ID IGUAL expresion PTCOMA
+    (14) instruccion -> DOUBLE . ID PTCOMA
+
+    ID              shift and go to state 11
+
+
+state 6
+
+    (9) instruccion -> FLOAT . ID IGUAL DECIMAL PTCOMA
+    (10) instruccion -> FLOAT . ID IGUAL expresion PTCOMA
+    (15) instruccion -> FLOAT . ID PTCOMA
+
+    ID              shift and go to state 12
+
+
+state 7
+
+    (11) instruccion -> BOOLEAN . ID IGUAL expresion3 PTCOMA
+    (16) instruccion -> BOOLEAN . ID PTCOMA
+
+    ID              shift and go to state 13
+
+
+state 8
+
+    (1) instrucciones -> instruccion instrucciones .
+
+    $end            reduce using rule 1 (instrucciones -> instruccion instrucciones .)
+
+
+state 9
+
+    (3) instruccion -> INT ID . IGUAL expresion2 PTCOMA
+    (4) instruccion -> INT ID . IGUAL ENTERO PTCOMA
+    (12) instruccion -> INT ID . PTCOMA
+
+    IGUAL           shift and go to state 14
+    PTCOMA          shift and go to state 15
+
+
+state 10
+
+    (5) instruccion -> STRING ID . IGUAL CADENA PTCOMA
+    (6) instruccion -> STRING ID . IGUAL CADENA MAS CADENA PTCOMA
+    (13) instruccion -> STRING ID . PTCOMA
+
+    IGUAL           shift and go to state 16
+    PTCOMA          shift and go to state 17
+
+
+state 11
+
+    (7) instruccion -> DOUBLE ID . IGUAL DECIMAL PTCOMA
+    (8) instruccion -> DOUBLE ID . IGUAL expresion PTCOMA
+    (14) instruccion -> DOUBLE ID . PTCOMA
+
+    IGUAL           shift and go to state 18
+    PTCOMA          shift and go to state 19
+
+
+state 12
+
+    (9) instruccion -> FLOAT ID . IGUAL DECIMAL PTCOMA
+    (10) instruccion -> FLOAT ID . IGUAL expresion PTCOMA
+    (15) instruccion -> FLOAT ID . PTCOMA
+
+    IGUAL           shift and go to state 20
+    PTCOMA          shift and go to state 21
+
+
+state 13
+
+    (11) instruccion -> BOOLEAN ID . IGUAL expresion3 PTCOMA
+    (16) instruccion -> BOOLEAN ID . PTCOMA
+
+    IGUAL           shift and go to state 22
+    PTCOMA          shift and go to state 23
+
+
+state 14
+
+    (3) instruccion -> INT ID IGUAL . expresion2 PTCOMA
+    (4) instruccion -> INT ID IGUAL . ENTERO PTCOMA
+    (21) expresion2 -> . ENTERO MAS ENTERO
+    (22) expresion2 -> . ENTERO MENOS ENTERO
+    (23) expresion2 -> . ENTERO POR ENTERO
+    (24) expresion2 -> . ENTERO DIVIDIDO ENTERO
+    (33) expresion2 -> . PARIZQ expresion2 PARDER
+
+    ENTERO          shift and go to state 25
+    PARIZQ          shift and go to state 26
+
+    expresion2                     shift and go to state 24
+
+state 15
+
+    (12) instruccion -> INT ID PTCOMA .
+
+    INT             reduce using rule 12 (instruccion -> INT ID PTCOMA .)
+    STRING          reduce using rule 12 (instruccion -> INT ID PTCOMA .)
+    DOUBLE          reduce using rule 12 (instruccion -> INT ID PTCOMA .)
+    FLOAT           reduce using rule 12 (instruccion -> INT ID PTCOMA .)
+    BOOLEAN         reduce using rule 12 (instruccion -> INT ID PTCOMA .)
+    $end            reduce using rule 12 (instruccion -> INT ID PTCOMA .)
+
+
+state 16
+
+    (5) instruccion -> STRING ID IGUAL . CADENA PTCOMA
+    (6) instruccion -> STRING ID IGUAL . CADENA MAS CADENA PTCOMA
+
+    CADENA          shift and go to state 27
+
+
+state 17
+
+    (13) instruccion -> STRING ID PTCOMA .
+
+    INT             reduce using rule 13 (instruccion -> STRING ID PTCOMA .)
+    STRING          reduce using rule 13 (instruccion -> STRING ID PTCOMA .)
+    DOUBLE          reduce using rule 13 (instruccion -> STRING ID PTCOMA .)
+    FLOAT           reduce using rule 13 (instruccion -> STRING ID PTCOMA .)
+    BOOLEAN         reduce using rule 13 (instruccion -> STRING ID PTCOMA .)
+    $end            reduce using rule 13 (instruccion -> STRING ID PTCOMA .)
+
+
+state 18
+
+    (7) instruccion -> DOUBLE ID IGUAL . DECIMAL PTCOMA
+    (8) instruccion -> DOUBLE ID IGUAL . expresion PTCOMA
+    (17) expresion -> . expresion MAS expresion
+    (18) expresion -> . expresion MENOS expresion
+    (19) expresion -> . expresion POR expresion
+    (20) expresion -> . expresion DIVIDIDO expresion
+    (31) expresion -> . MENOS expresion
+    (32) expresion -> . PARIZQ expresion PARDER
+    (34) expresion -> . ENTERO
+    (35) expresion -> . DECIMAL
+
+    DECIMAL         shift and go to state 28
+    MENOS           shift and go to state 30
+    PARIZQ          shift and go to state 31
+    ENTERO          shift and go to state 32
+
+    expresion                      shift and go to state 29
+
+state 19
+
+    (14) instruccion -> DOUBLE ID PTCOMA .
+
+    INT             reduce using rule 14 (instruccion -> DOUBLE ID PTCOMA .)
+    STRING          reduce using rule 14 (instruccion -> DOUBLE ID PTCOMA .)
+    DOUBLE          reduce using rule 14 (instruccion -> DOUBLE ID PTCOMA .)
+    FLOAT           reduce using rule 14 (instruccion -> DOUBLE ID PTCOMA .)
+    BOOLEAN         reduce using rule 14 (instruccion -> DOUBLE ID PTCOMA .)
+    $end            reduce using rule 14 (instruccion -> DOUBLE ID PTCOMA .)
+
+
+state 20
+
+    (9) instruccion -> FLOAT ID IGUAL . DECIMAL PTCOMA
+    (10) instruccion -> FLOAT ID IGUAL . expresion PTCOMA
+    (17) expresion -> . expresion MAS expresion
+    (18) expresion -> . expresion MENOS expresion
+    (19) expresion -> . expresion POR expresion
+    (20) expresion -> . expresion DIVIDIDO expresion
+    (31) expresion -> . MENOS expresion
+    (32) expresion -> . PARIZQ expresion PARDER
+    (34) expresion -> . ENTERO
+    (35) expresion -> . DECIMAL
+
+    DECIMAL         shift and go to state 33
+    MENOS           shift and go to state 30
+    PARIZQ          shift and go to state 31
+    ENTERO          shift and go to state 32
+
+    expresion                      shift and go to state 34
+
+state 21
+
+    (15) instruccion -> FLOAT ID PTCOMA .
+
+    INT             reduce using rule 15 (instruccion -> FLOAT ID PTCOMA .)
+    STRING          reduce using rule 15 (instruccion -> FLOAT ID PTCOMA .)
+    DOUBLE          reduce using rule 15 (instruccion -> FLOAT ID PTCOMA .)
+    FLOAT           reduce using rule 15 (instruccion -> FLOAT ID PTCOMA .)
+    BOOLEAN         reduce using rule 15 (instruccion -> FLOAT ID PTCOMA .)
+    $end            reduce using rule 15 (instruccion -> FLOAT ID PTCOMA .)
+
+
+state 22
+
+    (11) instruccion -> BOOLEAN ID IGUAL . expresion3 PTCOMA
+    (25) expresion3 -> . expresion MAYQUE expresion
+    (26) expresion3 -> . expresion MENQUE expresion
+    (27) expresion3 -> . expresion IGUALQUE expresion
+    (28) expresion3 -> . expresion NIGUALQUE expresion
+    (29) expresion3 -> . TRUE
+    (30) expresion3 -> . FALSE
+    (17) expresion -> . expresion MAS expresion
+    (18) expresion -> . expresion MENOS expresion
+    (19) expresion -> . expresion POR expresion
+    (20) expresion -> . expresion DIVIDIDO expresion
+    (31) expresion -> . MENOS expresion
+    (32) expresion -> . PARIZQ expresion PARDER
+    (34) expresion -> . ENTERO
+    (35) expresion -> . DECIMAL
+
+    TRUE            shift and go to state 37
+    FALSE           shift and go to state 38
+    MENOS           shift and go to state 30
+    PARIZQ          shift and go to state 31
+    ENTERO          shift and go to state 32
+    DECIMAL         shift and go to state 39
+
+    expresion3                     shift and go to state 35
+    expresion                      shift and go to state 36
+
+state 23
+
+    (16) instruccion -> BOOLEAN ID PTCOMA .
+
+    INT             reduce using rule 16 (instruccion -> BOOLEAN ID PTCOMA .)
+    STRING          reduce using rule 16 (instruccion -> BOOLEAN ID PTCOMA .)
+    DOUBLE          reduce using rule 16 (instruccion -> BOOLEAN ID PTCOMA .)
+    FLOAT           reduce using rule 16 (instruccion -> BOOLEAN ID PTCOMA .)
+    BOOLEAN         reduce using rule 16 (instruccion -> BOOLEAN ID PTCOMA .)
+    $end            reduce using rule 16 (instruccion -> BOOLEAN ID PTCOMA .)
+
+
+state 24
+
+    (3) instruccion -> INT ID IGUAL expresion2 . PTCOMA
+
+    PTCOMA          shift and go to state 40
+
+
+state 25
+
+    (4) instruccion -> INT ID IGUAL ENTERO . PTCOMA
+    (21) expresion2 -> ENTERO . MAS ENTERO
+    (22) expresion2 -> ENTERO . MENOS ENTERO
+    (23) expresion2 -> ENTERO . POR ENTERO
+    (24) expresion2 -> ENTERO . DIVIDIDO ENTERO
+
+    PTCOMA          shift and go to state 41
+    MAS             shift and go to state 42
+    MENOS           shift and go to state 43
+    POR             shift and go to state 44
+    DIVIDIDO        shift and go to state 45
+
+
+state 26
+
+    (33) expresion2 -> PARIZQ . expresion2 PARDER
+    (21) expresion2 -> . ENTERO MAS ENTERO
+    (22) expresion2 -> . ENTERO MENOS ENTERO
+    (23) expresion2 -> . ENTERO POR ENTERO
+    (24) expresion2 -> . ENTERO DIVIDIDO ENTERO
+    (33) expresion2 -> . PARIZQ expresion2 PARDER
+
+    ENTERO          shift and go to state 47
+    PARIZQ          shift and go to state 26
+
+    expresion2                     shift and go to state 46
+
+state 27
+
+    (5) instruccion -> STRING ID IGUAL CADENA . PTCOMA
+    (6) instruccion -> STRING ID IGUAL CADENA . MAS CADENA PTCOMA
+
+    PTCOMA          shift and go to state 48
+    MAS             shift and go to state 49
+
+
+state 28
+
+    (7) instruccion -> DOUBLE ID IGUAL DECIMAL . PTCOMA
+    (35) expresion -> DECIMAL .
+
+  ! shift/reduce conflict for PTCOMA resolved as shift
+    PTCOMA          shift and go to state 50
+    MAS             reduce using rule 35 (expresion -> DECIMAL .)
+    MENOS           reduce using rule 35 (expresion -> DECIMAL .)
+    POR             reduce using rule 35 (expresion -> DECIMAL .)
+    DIVIDIDO        reduce using rule 35 (expresion -> DECIMAL .)
+
+  ! PTCOMA          [ reduce using rule 35 (expresion -> DECIMAL .) ]
+
+
+state 29
+
+    (8) instruccion -> DOUBLE ID IGUAL expresion . PTCOMA
+    (17) expresion -> expresion . MAS expresion
+    (18) expresion -> expresion . MENOS expresion
+    (19) expresion -> expresion . POR expresion
+    (20) expresion -> expresion . DIVIDIDO expresion
+
+    PTCOMA          shift and go to state 51
+    MAS             shift and go to state 52
+    MENOS           shift and go to state 53
+    POR             shift and go to state 54
+    DIVIDIDO        shift and go to state 55
+
+
+state 30
+
+    (31) expresion -> MENOS . expresion
+    (17) expresion -> . expresion MAS expresion
+    (18) expresion -> . expresion MENOS expresion
+    (19) expresion -> . expresion POR expresion
+    (20) expresion -> . expresion DIVIDIDO expresion
+    (31) expresion -> . MENOS expresion
+    (32) expresion -> . PARIZQ expresion PARDER
+    (34) expresion -> . ENTERO
+    (35) expresion -> . DECIMAL
+
+    MENOS           shift and go to state 30
+    PARIZQ          shift and go to state 31
+    ENTERO          shift and go to state 32
+    DECIMAL         shift and go to state 39
+
+    expresion                      shift and go to state 56
+
+state 31
+
+    (32) expresion -> PARIZQ . expresion PARDER
+    (17) expresion -> . expresion MAS expresion
+    (18) expresion -> . expresion MENOS expresion
+    (19) expresion -> . expresion POR expresion
+    (20) expresion -> . expresion DIVIDIDO expresion
+    (31) expresion -> . MENOS expresion
+    (32) expresion -> . PARIZQ expresion PARDER
+    (34) expresion -> . ENTERO
+    (35) expresion -> . DECIMAL
+
+    MENOS           shift and go to state 30
+    PARIZQ          shift and go to state 31
+    ENTERO          shift and go to state 32
+    DECIMAL         shift and go to state 39
+
+    expresion                      shift and go to state 57
+
+state 32
+
+    (34) expresion -> ENTERO .
+
+    PTCOMA          reduce using rule 34 (expresion -> ENTERO .)
+    MAS             reduce using rule 34 (expresion -> ENTERO .)
+    MENOS           reduce using rule 34 (expresion -> ENTERO .)
+    POR             reduce using rule 34 (expresion -> ENTERO .)
+    DIVIDIDO        reduce using rule 34 (expresion -> ENTERO .)
+    MAYQUE          reduce using rule 34 (expresion -> ENTERO .)
+    MENQUE          reduce using rule 34 (expresion -> ENTERO .)
+    IGUALQUE        reduce using rule 34 (expresion -> ENTERO .)
+    NIGUALQUE       reduce using rule 34 (expresion -> ENTERO .)
+    PARDER          reduce using rule 34 (expresion -> ENTERO .)
+
+
+state 33
+
+    (9) instruccion -> FLOAT ID IGUAL DECIMAL . PTCOMA
+    (35) expresion -> DECIMAL .
+
+  ! shift/reduce conflict for PTCOMA resolved as shift
+    PTCOMA          shift and go to state 58
+    MAS             reduce using rule 35 (expresion -> DECIMAL .)
+    MENOS           reduce using rule 35 (expresion -> DECIMAL .)
+    POR             reduce using rule 35 (expresion -> DECIMAL .)
+    DIVIDIDO        reduce using rule 35 (expresion -> DECIMAL .)
+
+  ! PTCOMA          [ reduce using rule 35 (expresion -> DECIMAL .) ]
+
+
+state 34
+
+    (10) instruccion -> FLOAT ID IGUAL expresion . PTCOMA
+    (17) expresion -> expresion . MAS expresion
+    (18) expresion -> expresion . MENOS expresion
+    (19) expresion -> expresion . POR expresion
+    (20) expresion -> expresion . DIVIDIDO expresion
+
+    PTCOMA          shift and go to state 59
+    MAS             shift and go to state 52
+    MENOS           shift and go to state 53
+    POR             shift and go to state 54
+    DIVIDIDO        shift and go to state 55
+
+
+state 35
+
+    (11) instruccion -> BOOLEAN ID IGUAL expresion3 . PTCOMA
+
+    PTCOMA          shift and go to state 60
+
+
+state 36
+
+    (25) expresion3 -> expresion . MAYQUE expresion
+    (26) expresion3 -> expresion . MENQUE expresion
+    (27) expresion3 -> expresion . IGUALQUE expresion
+    (28) expresion3 -> expresion . NIGUALQUE expresion
+    (17) expresion -> expresion . MAS expresion
+    (18) expresion -> expresion . MENOS expresion
+    (19) expresion -> expresion . POR expresion
+    (20) expresion -> expresion . DIVIDIDO expresion
+
+    MAYQUE          shift and go to state 61
+    MENQUE          shift and go to state 62
+    IGUALQUE        shift and go to state 63
+    NIGUALQUE       shift and go to state 64
+    MAS             shift and go to state 52
+    MENOS           shift and go to state 53
+    POR             shift and go to state 54
+    DIVIDIDO        shift and go to state 55
+
+
+state 37
+
+    (29) expresion3 -> TRUE .
+
+    PTCOMA          reduce using rule 29 (expresion3 -> TRUE .)
+
+
+state 38
+
+    (30) expresion3 -> FALSE .
+
+    PTCOMA          reduce using rule 30 (expresion3 -> FALSE .)
+
+
+state 39
+
+    (35) expresion -> DECIMAL .
+
+    MAYQUE          reduce using rule 35 (expresion -> DECIMAL .)
+    MENQUE          reduce using rule 35 (expresion -> DECIMAL .)
+    IGUALQUE        reduce using rule 35 (expresion -> DECIMAL .)
+    NIGUALQUE       reduce using rule 35 (expresion -> DECIMAL .)
+    MAS             reduce using rule 35 (expresion -> DECIMAL .)
+    MENOS           reduce using rule 35 (expresion -> DECIMAL .)
+    POR             reduce using rule 35 (expresion -> DECIMAL .)
+    DIVIDIDO        reduce using rule 35 (expresion -> DECIMAL .)
+    PTCOMA          reduce using rule 35 (expresion -> DECIMAL .)
+    PARDER          reduce using rule 35 (expresion -> DECIMAL .)
+
+
+state 40
+
+    (3) instruccion -> INT ID IGUAL expresion2 PTCOMA .
+
+    INT             reduce using rule 3 (instruccion -> INT ID IGUAL expresion2 PTCOMA .)
+    STRING          reduce using rule 3 (instruccion -> INT ID IGUAL expresion2 PTCOMA .)
+    DOUBLE          reduce using rule 3 (instruccion -> INT ID IGUAL expresion2 PTCOMA .)
+    FLOAT           reduce using rule 3 (instruccion -> INT ID IGUAL expresion2 PTCOMA .)
+    BOOLEAN         reduce using rule 3 (instruccion -> INT ID IGUAL expresion2 PTCOMA .)
+    $end            reduce using rule 3 (instruccion -> INT ID IGUAL expresion2 PTCOMA .)
+
+
+state 41
+
+    (4) instruccion -> INT ID IGUAL ENTERO PTCOMA .
+
+    INT             reduce using rule 4 (instruccion -> INT ID IGUAL ENTERO PTCOMA .)
+    STRING          reduce using rule 4 (instruccion -> INT ID IGUAL ENTERO PTCOMA .)
+    DOUBLE          reduce using rule 4 (instruccion -> INT ID IGUAL ENTERO PTCOMA .)
+    FLOAT           reduce using rule 4 (instruccion -> INT ID IGUAL ENTERO PTCOMA .)
+    BOOLEAN         reduce using rule 4 (instruccion -> INT ID IGUAL ENTERO PTCOMA .)
+    $end            reduce using rule 4 (instruccion -> INT ID IGUAL ENTERO PTCOMA .)
+
+
+state 42
+
+    (21) expresion2 -> ENTERO MAS . ENTERO
+
+    ENTERO          shift and go to state 65
+
+
+state 43
+
+    (22) expresion2 -> ENTERO MENOS . ENTERO
+
+    ENTERO          shift and go to state 66
+
+
+state 44
+
+    (23) expresion2 -> ENTERO POR . ENTERO
+
+    ENTERO          shift and go to state 67
+
+
+state 45
+
+    (24) expresion2 -> ENTERO DIVIDIDO . ENTERO
+
+    ENTERO          shift and go to state 68
+
+
+state 46
+
+    (33) expresion2 -> PARIZQ expresion2 . PARDER
+
+    PARDER          shift and go to state 69
+
+
+state 47
+
+    (21) expresion2 -> ENTERO . MAS ENTERO
+    (22) expresion2 -> ENTERO . MENOS ENTERO
+    (23) expresion2 -> ENTERO . POR ENTERO
+    (24) expresion2 -> ENTERO . DIVIDIDO ENTERO
+
+    MAS             shift and go to state 42
+    MENOS           shift and go to state 43
+    POR             shift and go to state 44
+    DIVIDIDO        shift and go to state 45
+
+
+state 48
+
+    (5) instruccion -> STRING ID IGUAL CADENA PTCOMA .
+
+    INT             reduce using rule 5 (instruccion -> STRING ID IGUAL CADENA PTCOMA .)
+    STRING          reduce using rule 5 (instruccion -> STRING ID IGUAL CADENA PTCOMA .)
+    DOUBLE          reduce using rule 5 (instruccion -> STRING ID IGUAL CADENA PTCOMA .)
+    FLOAT           reduce using rule 5 (instruccion -> STRING ID IGUAL CADENA PTCOMA .)
+    BOOLEAN         reduce using rule 5 (instruccion -> STRING ID IGUAL CADENA PTCOMA .)
+    $end            reduce using rule 5 (instruccion -> STRING ID IGUAL CADENA PTCOMA .)
+
+
+state 49
+
+    (6) instruccion -> STRING ID IGUAL CADENA MAS . CADENA PTCOMA
+
+    CADENA          shift and go to state 70
+
+
+state 50
+
+    (7) instruccion -> DOUBLE ID IGUAL DECIMAL PTCOMA .
+
+    INT             reduce using rule 7 (instruccion -> DOUBLE ID IGUAL DECIMAL PTCOMA .)
+    STRING          reduce using rule 7 (instruccion -> DOUBLE ID IGUAL DECIMAL PTCOMA .)
+    DOUBLE          reduce using rule 7 (instruccion -> DOUBLE ID IGUAL DECIMAL PTCOMA .)
+    FLOAT           reduce using rule 7 (instruccion -> DOUBLE ID IGUAL DECIMAL PTCOMA .)
+    BOOLEAN         reduce using rule 7 (instruccion -> DOUBLE ID IGUAL DECIMAL PTCOMA .)
+    $end            reduce using rule 7 (instruccion -> DOUBLE ID IGUAL DECIMAL PTCOMA .)
+
+
+state 51
+
+    (8) instruccion -> DOUBLE ID IGUAL expresion PTCOMA .
+
+    INT             reduce using rule 8 (instruccion -> DOUBLE ID IGUAL expresion PTCOMA .)
+    STRING          reduce using rule 8 (instruccion -> DOUBLE ID IGUAL expresion PTCOMA .)
+    DOUBLE          reduce using rule 8 (instruccion -> DOUBLE ID IGUAL expresion PTCOMA .)
+    FLOAT           reduce using rule 8 (instruccion -> DOUBLE ID IGUAL expresion PTCOMA .)
+    BOOLEAN         reduce using rule 8 (instruccion -> DOUBLE ID IGUAL expresion PTCOMA .)
+    $end            reduce using rule 8 (instruccion -> DOUBLE ID IGUAL expresion PTCOMA .)
+
+
+state 52
+
+    (17) expresion -> expresion MAS . expresion
+    (17) expresion -> . expresion MAS expresion
+    (18) expresion -> . expresion MENOS expresion
+    (19) expresion -> . expresion POR expresion
+    (20) expresion -> . expresion DIVIDIDO expresion
+    (31) expresion -> . MENOS expresion
+    (32) expresion -> . PARIZQ expresion PARDER
+    (34) expresion -> . ENTERO
+    (35) expresion -> . DECIMAL
+
+    MENOS           shift and go to state 30
+    PARIZQ          shift and go to state 31
+    ENTERO          shift and go to state 32
+    DECIMAL         shift and go to state 39
+
+    expresion                      shift and go to state 71
+
+state 53
+
+    (18) expresion -> expresion MENOS . expresion
+    (17) expresion -> . expresion MAS expresion
+    (18) expresion -> . expresion MENOS expresion
+    (19) expresion -> . expresion POR expresion
+    (20) expresion -> . expresion DIVIDIDO expresion
+    (31) expresion -> . MENOS expresion
+    (32) expresion -> . PARIZQ expresion PARDER
+    (34) expresion -> . ENTERO
+    (35) expresion -> . DECIMAL
+
+    MENOS           shift and go to state 30
+    PARIZQ          shift and go to state 31
+    ENTERO          shift and go to state 32
+    DECIMAL         shift and go to state 39
+
+    expresion                      shift and go to state 72
+
+state 54
+
+    (19) expresion -> expresion POR . expresion
+    (17) expresion -> . expresion MAS expresion
+    (18) expresion -> . expresion MENOS expresion
+    (19) expresion -> . expresion POR expresion
+    (20) expresion -> . expresion DIVIDIDO expresion
+    (31) expresion -> . MENOS expresion
+    (32) expresion -> . PARIZQ expresion PARDER
+    (34) expresion -> . ENTERO
+    (35) expresion -> . DECIMAL
+
+    MENOS           shift and go to state 30
+    PARIZQ          shift and go to state 31
+    ENTERO          shift and go to state 32
+    DECIMAL         shift and go to state 39
+
+    expresion                      shift and go to state 73
+
+state 55
+
+    (20) expresion -> expresion DIVIDIDO . expresion
+    (17) expresion -> . expresion MAS expresion
+    (18) expresion -> . expresion MENOS expresion
+    (19) expresion -> . expresion POR expresion
+    (20) expresion -> . expresion DIVIDIDO expresion
+    (31) expresion -> . MENOS expresion
+    (32) expresion -> . PARIZQ expresion PARDER
+    (34) expresion -> . ENTERO
+    (35) expresion -> . DECIMAL
+
+    MENOS           shift and go to state 30
+    PARIZQ          shift and go to state 31
+    ENTERO          shift and go to state 32
+    DECIMAL         shift and go to state 39
+
+    expresion                      shift and go to state 74
+
+state 56
+
+    (31) expresion -> MENOS expresion .
+    (17) expresion -> expresion . MAS expresion
+    (18) expresion -> expresion . MENOS expresion
+    (19) expresion -> expresion . POR expresion
+    (20) expresion -> expresion . DIVIDIDO expresion
+
+    PTCOMA          reduce using rule 31 (expresion -> MENOS expresion .)
+    MAS             reduce using rule 31 (expresion -> MENOS expresion .)
+    MENOS           reduce using rule 31 (expresion -> MENOS expresion .)
+    POR             reduce using rule 31 (expresion -> MENOS expresion .)
+    DIVIDIDO        reduce using rule 31 (expresion -> MENOS expresion .)
+    MAYQUE          reduce using rule 31 (expresion -> MENOS expresion .)
+    MENQUE          reduce using rule 31 (expresion -> MENOS expresion .)
+    IGUALQUE        reduce using rule 31 (expresion -> MENOS expresion .)
+    NIGUALQUE       reduce using rule 31 (expresion -> MENOS expresion .)
+    PARDER          reduce using rule 31 (expresion -> MENOS expresion .)
+
+  ! MAS             [ shift and go to state 52 ]
+  ! MENOS           [ shift and go to state 53 ]
+  ! POR             [ shift and go to state 54 ]
+  ! DIVIDIDO        [ shift and go to state 55 ]
+
+
+state 57
+
+    (32) expresion -> PARIZQ expresion . PARDER
+    (17) expresion -> expresion . MAS expresion
+    (18) expresion -> expresion . MENOS expresion
+    (19) expresion -> expresion . POR expresion
+    (20) expresion -> expresion . DIVIDIDO expresion
+
+    PARDER          shift and go to state 75
+    MAS             shift and go to state 52
+    MENOS           shift and go to state 53
+    POR             shift and go to state 54
+    DIVIDIDO        shift and go to state 55
+
+
+state 58
+
+    (9) instruccion -> FLOAT ID IGUAL DECIMAL PTCOMA .
+
+    INT             reduce using rule 9 (instruccion -> FLOAT ID IGUAL DECIMAL PTCOMA .)
+    STRING          reduce using rule 9 (instruccion -> FLOAT ID IGUAL DECIMAL PTCOMA .)
+    DOUBLE          reduce using rule 9 (instruccion -> FLOAT ID IGUAL DECIMAL PTCOMA .)
+    FLOAT           reduce using rule 9 (instruccion -> FLOAT ID IGUAL DECIMAL PTCOMA .)
+    BOOLEAN         reduce using rule 9 (instruccion -> FLOAT ID IGUAL DECIMAL PTCOMA .)
+    $end            reduce using rule 9 (instruccion -> FLOAT ID IGUAL DECIMAL PTCOMA .)
+
+
+state 59
+
+    (10) instruccion -> FLOAT ID IGUAL expresion PTCOMA .
+
+    INT             reduce using rule 10 (instruccion -> FLOAT ID IGUAL expresion PTCOMA .)
+    STRING          reduce using rule 10 (instruccion -> FLOAT ID IGUAL expresion PTCOMA .)
+    DOUBLE          reduce using rule 10 (instruccion -> FLOAT ID IGUAL expresion PTCOMA .)
+    FLOAT           reduce using rule 10 (instruccion -> FLOAT ID IGUAL expresion PTCOMA .)
+    BOOLEAN         reduce using rule 10 (instruccion -> FLOAT ID IGUAL expresion PTCOMA .)
+    $end            reduce using rule 10 (instruccion -> FLOAT ID IGUAL expresion PTCOMA .)
+
+
+state 60
+
+    (11) instruccion -> BOOLEAN ID IGUAL expresion3 PTCOMA .
+
+    INT             reduce using rule 11 (instruccion -> BOOLEAN ID IGUAL expresion3 PTCOMA .)
+    STRING          reduce using rule 11 (instruccion -> BOOLEAN ID IGUAL expresion3 PTCOMA .)
+    DOUBLE          reduce using rule 11 (instruccion -> BOOLEAN ID IGUAL expresion3 PTCOMA .)
+    FLOAT           reduce using rule 11 (instruccion -> BOOLEAN ID IGUAL expresion3 PTCOMA .)
+    BOOLEAN         reduce using rule 11 (instruccion -> BOOLEAN ID IGUAL expresion3 PTCOMA .)
+    $end            reduce using rule 11 (instruccion -> BOOLEAN ID IGUAL expresion3 PTCOMA .)
+
+
+state 61
+
+    (25) expresion3 -> expresion MAYQUE . expresion
+    (17) expresion -> . expresion MAS expresion
+    (18) expresion -> . expresion MENOS expresion
+    (19) expresion -> . expresion POR expresion
+    (20) expresion -> . expresion DIVIDIDO expresion
+    (31) expresion -> . MENOS expresion
+    (32) expresion -> . PARIZQ expresion PARDER
+    (34) expresion -> . ENTERO
+    (35) expresion -> . DECIMAL
+
+    MENOS           shift and go to state 30
+    PARIZQ          shift and go to state 31
+    ENTERO          shift and go to state 32
+    DECIMAL         shift and go to state 39
+
+    expresion                      shift and go to state 76
+
+state 62
+
+    (26) expresion3 -> expresion MENQUE . expresion
+    (17) expresion -> . expresion MAS expresion
+    (18) expresion -> . expresion MENOS expresion
+    (19) expresion -> . expresion POR expresion
+    (20) expresion -> . expresion DIVIDIDO expresion
+    (31) expresion -> . MENOS expresion
+    (32) expresion -> . PARIZQ expresion PARDER
+    (34) expresion -> . ENTERO
+    (35) expresion -> . DECIMAL
+
+    MENOS           shift and go to state 30
+    PARIZQ          shift and go to state 31
+    ENTERO          shift and go to state 32
+    DECIMAL         shift and go to state 39
+
+    expresion                      shift and go to state 77
+
+state 63
+
+    (27) expresion3 -> expresion IGUALQUE . expresion
+    (17) expresion -> . expresion MAS expresion
+    (18) expresion -> . expresion MENOS expresion
+    (19) expresion -> . expresion POR expresion
+    (20) expresion -> . expresion DIVIDIDO expresion
+    (31) expresion -> . MENOS expresion
+    (32) expresion -> . PARIZQ expresion PARDER
+    (34) expresion -> . ENTERO
+    (35) expresion -> . DECIMAL
+
+    MENOS           shift and go to state 30
+    PARIZQ          shift and go to state 31
+    ENTERO          shift and go to state 32
+    DECIMAL         shift and go to state 39
+
+    expresion                      shift and go to state 78
+
+state 64
+
+    (28) expresion3 -> expresion NIGUALQUE . expresion
+    (17) expresion -> . expresion MAS expresion
+    (18) expresion -> . expresion MENOS expresion
+    (19) expresion -> . expresion POR expresion
+    (20) expresion -> . expresion DIVIDIDO expresion
+    (31) expresion -> . MENOS expresion
+    (32) expresion -> . PARIZQ expresion PARDER
+    (34) expresion -> . ENTERO
+    (35) expresion -> . DECIMAL
+
+    MENOS           shift and go to state 30
+    PARIZQ          shift and go to state 31
+    ENTERO          shift and go to state 32
+    DECIMAL         shift and go to state 39
+
+    expresion                      shift and go to state 79
+
+state 65
+
+    (21) expresion2 -> ENTERO MAS ENTERO .
+
+    PTCOMA          reduce using rule 21 (expresion2 -> ENTERO MAS ENTERO .)
+    PARDER          reduce using rule 21 (expresion2 -> ENTERO MAS ENTERO .)
+
+
+state 66
+
+    (22) expresion2 -> ENTERO MENOS ENTERO .
+
+    PTCOMA          reduce using rule 22 (expresion2 -> ENTERO MENOS ENTERO .)
+    PARDER          reduce using rule 22 (expresion2 -> ENTERO MENOS ENTERO .)
+
+
+state 67
+
+    (23) expresion2 -> ENTERO POR ENTERO .
+
+    PTCOMA          reduce using rule 23 (expresion2 -> ENTERO POR ENTERO .)
+    PARDER          reduce using rule 23 (expresion2 -> ENTERO POR ENTERO .)
+
+
+state 68
+
+    (24) expresion2 -> ENTERO DIVIDIDO ENTERO .
+
+    PTCOMA          reduce using rule 24 (expresion2 -> ENTERO DIVIDIDO ENTERO .)
+    PARDER          reduce using rule 24 (expresion2 -> ENTERO DIVIDIDO ENTERO .)
+
+
+state 69
+
+    (33) expresion2 -> PARIZQ expresion2 PARDER .
+
+    PTCOMA          reduce using rule 33 (expresion2 -> PARIZQ expresion2 PARDER .)
+    PARDER          reduce using rule 33 (expresion2 -> PARIZQ expresion2 PARDER .)
+
+
+state 70
+
+    (6) instruccion -> STRING ID IGUAL CADENA MAS CADENA . PTCOMA
+
+    PTCOMA          shift and go to state 80
+
+
+state 71
+
+    (17) expresion -> expresion MAS expresion .
+    (17) expresion -> expresion . MAS expresion
+    (18) expresion -> expresion . MENOS expresion
+    (19) expresion -> expresion . POR expresion
+    (20) expresion -> expresion . DIVIDIDO expresion
+
+    PTCOMA          reduce using rule 17 (expresion -> expresion MAS expresion .)
+    MAS             reduce using rule 17 (expresion -> expresion MAS expresion .)
+    MENOS           reduce using rule 17 (expresion -> expresion MAS expresion .)
+    MAYQUE          reduce using rule 17 (expresion -> expresion MAS expresion .)
+    MENQUE          reduce using rule 17 (expresion -> expresion MAS expresion .)
+    IGUALQUE        reduce using rule 17 (expresion -> expresion MAS expresion .)
+    NIGUALQUE       reduce using rule 17 (expresion -> expresion MAS expresion .)
+    PARDER          reduce using rule 17 (expresion -> expresion MAS expresion .)
+    POR             shift and go to state 54
+    DIVIDIDO        shift and go to state 55
+
+  ! POR             [ reduce using rule 17 (expresion -> expresion MAS expresion .) ]
+  ! DIVIDIDO        [ reduce using rule 17 (expresion -> expresion MAS expresion .) ]
+  ! MAS             [ shift and go to state 52 ]
+  ! MENOS           [ shift and go to state 53 ]
+
+
+state 72
+
+    (18) expresion -> expresion MENOS expresion .
+    (17) expresion -> expresion . MAS expresion
+    (18) expresion -> expresion . MENOS expresion
+    (19) expresion -> expresion . POR expresion
+    (20) expresion -> expresion . DIVIDIDO expresion
+
+    PTCOMA          reduce using rule 18 (expresion -> expresion MENOS expresion .)
+    MAS             reduce using rule 18 (expresion -> expresion MENOS expresion .)
+    MENOS           reduce using rule 18 (expresion -> expresion MENOS expresion .)
+    MAYQUE          reduce using rule 18 (expresion -> expresion MENOS expresion .)
+    MENQUE          reduce using rule 18 (expresion -> expresion MENOS expresion .)
+    IGUALQUE        reduce using rule 18 (expresion -> expresion MENOS expresion .)
+    NIGUALQUE       reduce using rule 18 (expresion -> expresion MENOS expresion .)
+    PARDER          reduce using rule 18 (expresion -> expresion MENOS expresion .)
+    POR             shift and go to state 54
+    DIVIDIDO        shift and go to state 55
+
+  ! POR             [ reduce using rule 18 (expresion -> expresion MENOS expresion .) ]
+  ! DIVIDIDO        [ reduce using rule 18 (expresion -> expresion MENOS expresion .) ]
+  ! MAS             [ shift and go to state 52 ]
+  ! MENOS           [ shift and go to state 53 ]
+
+
+state 73
+
+    (19) expresion -> expresion POR expresion .
+    (17) expresion -> expresion . MAS expresion
+    (18) expresion -> expresion . MENOS expresion
+    (19) expresion -> expresion . POR expresion
+    (20) expresion -> expresion . DIVIDIDO expresion
+
+    PTCOMA          reduce using rule 19 (expresion -> expresion POR expresion .)
+    MAS             reduce using rule 19 (expresion -> expresion POR expresion .)
+    MENOS           reduce using rule 19 (expresion -> expresion POR expresion .)
+    POR             reduce using rule 19 (expresion -> expresion POR expresion .)
+    DIVIDIDO        reduce using rule 19 (expresion -> expresion POR expresion .)
+    MAYQUE          reduce using rule 19 (expresion -> expresion POR expresion .)
+    MENQUE          reduce using rule 19 (expresion -> expresion POR expresion .)
+    IGUALQUE        reduce using rule 19 (expresion -> expresion POR expresion .)
+    NIGUALQUE       reduce using rule 19 (expresion -> expresion POR expresion .)
+    PARDER          reduce using rule 19 (expresion -> expresion POR expresion .)
+
+  ! MAS             [ shift and go to state 52 ]
+  ! MENOS           [ shift and go to state 53 ]
+  ! POR             [ shift and go to state 54 ]
+  ! DIVIDIDO        [ shift and go to state 55 ]
+
+
+state 74
+
+    (20) expresion -> expresion DIVIDIDO expresion .
+    (17) expresion -> expresion . MAS expresion
+    (18) expresion -> expresion . MENOS expresion
+    (19) expresion -> expresion . POR expresion
+    (20) expresion -> expresion . DIVIDIDO expresion
+
+    PTCOMA          reduce using rule 20 (expresion -> expresion DIVIDIDO expresion .)
+    MAS             reduce using rule 20 (expresion -> expresion DIVIDIDO expresion .)
+    MENOS           reduce using rule 20 (expresion -> expresion DIVIDIDO expresion .)
+    POR             reduce using rule 20 (expresion -> expresion DIVIDIDO expresion .)
+    DIVIDIDO        reduce using rule 20 (expresion -> expresion DIVIDIDO expresion .)
+    MAYQUE          reduce using rule 20 (expresion -> expresion DIVIDIDO expresion .)
+    MENQUE          reduce using rule 20 (expresion -> expresion DIVIDIDO expresion .)
+    IGUALQUE        reduce using rule 20 (expresion -> expresion DIVIDIDO expresion .)
+    NIGUALQUE       reduce using rule 20 (expresion -> expresion DIVIDIDO expresion .)
+    PARDER          reduce using rule 20 (expresion -> expresion DIVIDIDO expresion .)
+
+  ! MAS             [ shift and go to state 52 ]
+  ! MENOS           [ shift and go to state 53 ]
+  ! POR             [ shift and go to state 54 ]
+  ! DIVIDIDO        [ shift and go to state 55 ]
+
+
+state 75
+
+    (32) expresion -> PARIZQ expresion PARDER .
+
+    PTCOMA          reduce using rule 32 (expresion -> PARIZQ expresion PARDER .)
+    MAS             reduce using rule 32 (expresion -> PARIZQ expresion PARDER .)
+    MENOS           reduce using rule 32 (expresion -> PARIZQ expresion PARDER .)
+    POR             reduce using rule 32 (expresion -> PARIZQ expresion PARDER .)
+    DIVIDIDO        reduce using rule 32 (expresion -> PARIZQ expresion PARDER .)
+    MAYQUE          reduce using rule 32 (expresion -> PARIZQ expresion PARDER .)
+    MENQUE          reduce using rule 32 (expresion -> PARIZQ expresion PARDER .)
+    IGUALQUE        reduce using rule 32 (expresion -> PARIZQ expresion PARDER .)
+    NIGUALQUE       reduce using rule 32 (expresion -> PARIZQ expresion PARDER .)
+    PARDER          reduce using rule 32 (expresion -> PARIZQ expresion PARDER .)
+
+
+state 76
+
+    (25) expresion3 -> expresion MAYQUE expresion .
+    (17) expresion -> expresion . MAS expresion
+    (18) expresion -> expresion . MENOS expresion
+    (19) expresion -> expresion . POR expresion
+    (20) expresion -> expresion . DIVIDIDO expresion
+
+    PTCOMA          reduce using rule 25 (expresion3 -> expresion MAYQUE expresion .)
+    MAS             shift and go to state 52
+    MENOS           shift and go to state 53
+    POR             shift and go to state 54
+    DIVIDIDO        shift and go to state 55
+
+
+state 77
+
+    (26) expresion3 -> expresion MENQUE expresion .
+    (17) expresion -> expresion . MAS expresion
+    (18) expresion -> expresion . MENOS expresion
+    (19) expresion -> expresion . POR expresion
+    (20) expresion -> expresion . DIVIDIDO expresion
+
+    PTCOMA          reduce using rule 26 (expresion3 -> expresion MENQUE expresion .)
+    MAS             shift and go to state 52
+    MENOS           shift and go to state 53
+    POR             shift and go to state 54
+    DIVIDIDO        shift and go to state 55
+
+
+state 78
+
+    (27) expresion3 -> expresion IGUALQUE expresion .
+    (17) expresion -> expresion . MAS expresion
+    (18) expresion -> expresion . MENOS expresion
+    (19) expresion -> expresion . POR expresion
+    (20) expresion -> expresion . DIVIDIDO expresion
+
+    PTCOMA          reduce using rule 27 (expresion3 -> expresion IGUALQUE expresion .)
+    MAS             shift and go to state 52
+    MENOS           shift and go to state 53
+    POR             shift and go to state 54
+    DIVIDIDO        shift and go to state 55
+
+
+state 79
+
+    (28) expresion3 -> expresion NIGUALQUE expresion .
+    (17) expresion -> expresion . MAS expresion
+    (18) expresion -> expresion . MENOS expresion
+    (19) expresion -> expresion . POR expresion
+    (20) expresion -> expresion . DIVIDIDO expresion
+
+    PTCOMA          reduce using rule 28 (expresion3 -> expresion NIGUALQUE expresion .)
+    MAS             shift and go to state 52
+    MENOS           shift and go to state 53
+    POR             shift and go to state 54
+    DIVIDIDO        shift and go to state 55
+
+
+state 80
+
+    (6) instruccion -> STRING ID IGUAL CADENA MAS CADENA PTCOMA .
+
+    INT             reduce using rule 6 (instruccion -> STRING ID IGUAL CADENA MAS CADENA PTCOMA .)
+    STRING          reduce using rule 6 (instruccion -> STRING ID IGUAL CADENA MAS CADENA PTCOMA .)
+    DOUBLE          reduce using rule 6 (instruccion -> STRING ID IGUAL CADENA MAS CADENA PTCOMA .)
+    FLOAT           reduce using rule 6 (instruccion -> STRING ID IGUAL CADENA MAS CADENA PTCOMA .)
+    BOOLEAN         reduce using rule 6 (instruccion -> STRING ID IGUAL CADENA MAS CADENA PTCOMA .)
+    $end            reduce using rule 6 (instruccion -> STRING ID IGUAL CADENA MAS CADENA PTCOMA .)
+
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: shift/reduce conflict for PTCOMA in state 28 resolved as shift
+WARNING: shift/reduce conflict for PTCOMA in state 33 resolved as shift
